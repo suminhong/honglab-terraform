@@ -11,7 +11,7 @@ locals {
 
 module "vpc" {
   source   = "github.com/suminhong/honglab-terraform.git/modules/networking/vpc"
-  project  = "honglab-dev"
+  prj      = "honglab-dev"
 
   # (필수) VPC의 CIDR
   vpc_cidr = "10.0.0.0/16"
