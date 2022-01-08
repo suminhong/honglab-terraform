@@ -19,13 +19,13 @@ module "vpc" {
   vpc_cidr = "10.0.0.0/16"
   
   # Internet Gateway 활성화 여부. default = true
-  internet_gateway_enabled = false
+  enable_igw = false
   
   # VPC에 연결할 Route 53 Private Host Zone이 있는 경우 [List]. default = []
   private_hosted_zones = ["honglab.com",]
   
   # VGW 활성화 여부. default = false
-  vpn_gateway_enabled = true
+  enable_vgw = true
   
   # VGW ASN 설정 필요 시 입력. default = 64512
   vpn_gateway_asn = 64512
@@ -42,13 +42,13 @@ output "vpc_id" {
   value = module.vpc.vpc_id
 }
 
-output "igw_id" {
+output "enable_igw" {
   # internet_gateway_enabled = true 인 경우만 생성
   value = module.vpc.igw_id
 }
 
 output "vpn_gateway_id" {
-  # vpn_gateway_enabled = true 인 경우만 생성
+  # enable_vgw = true 인 경우만 생성
   value = module.vpc.vpn_gateway_id
 }
 ```
