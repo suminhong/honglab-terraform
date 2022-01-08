@@ -1,4 +1,6 @@
 locals {
+  # dst_cidr : CIDR Block or Prefix List ID
+  # dst_id : IGW / VGW / NAT / TGW / Instance / Peering / VPCE
   routings = {
     public = {
       igw = {
@@ -21,10 +23,17 @@ locals {
   }
 }
 
+
+## Create Routing
 module "routing" {
-  source = "../../modules/networking/route"
+  source   = "../../modules/networking/route"
   for_each = local.routings
 
-  rt_id = module.subnet[each.key].rt_id
+  rt_id    = module.subnet[each.key].rt_id
   routings = each.value
+
+  depends_on = [
+    module.vpc,
+    module.subnet,
+  ]
 }
