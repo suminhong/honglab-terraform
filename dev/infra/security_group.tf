@@ -14,6 +14,7 @@ module "security_groups" {
   vpc_id   = module.vpc.vpc_id
   name     = each.key
   sg_rules = csvdecode(file("./sg_csv/${each.key}.csv"))
+  tags     = local.env_tag
 }
 
 ## SG to SG 별도 관리
