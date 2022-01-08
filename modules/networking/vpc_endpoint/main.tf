@@ -36,7 +36,7 @@ resource "aws_vpc_endpoint" "vpce" {
     var.tags,
     local.module_tag,
     {
-      Name = "${var.prj}-${var.name}-vpce"
+      Name = "${var.prj}-vpce-${var.name}"
     }
   )
 }
@@ -50,6 +50,6 @@ locals {
 }
 
 data "aws_network_interface" "vpce_ip_id" {
-  count = lookup(var.attribute, "service_type", "Interface") == "Interface" ? length(local.vpce_id_list) : 0
+  count = lookup(var.attribute, "service_type", "Interface") == "Interface" ? length(var.attribute.subnet_ids) : 0
   id    = local.vpce_id_list[count.index]
 }

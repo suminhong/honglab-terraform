@@ -38,6 +38,7 @@ output "vpce_id" {
 }
 
 output "vpce_ips" {
+  # service_type = "Interface" 인 경우만 생성
   value = module.vpc_endpoint.vpce_ips
 }
 ```
@@ -60,7 +61,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | prj | Project Name | `string` | n/a | yes |
 | name | The Name of VPC Endpoint | `string` | n/a | yes |
-| attribute | VPC Endpoint Attribute Set | `map(any)` | n/a | yes |
+| attribute | VPC Endpoint Attribute Set | n/a | n/a | yes |
 | default_sg | The List of Default Security Groups | `list(string)` | `[]` | no |
 | tags | A map of tags to add to all resources | `map(string)` | `{}` | no |
 
@@ -69,4 +70,4 @@ No modules.
 | Name | Description |
 |------|-------------|
 | vpce_id | The ID of VPC Endpoint |
-| vpce_ip | The Private IP of VPC Endpoint |
+| vpce_ips | The Private IP List of VPC Endpoint |

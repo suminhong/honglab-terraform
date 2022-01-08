@@ -15,7 +15,6 @@ variable "name" {
 
 variable "attribute" {
   description = "VPC Endpoint Attribute Set"
-  type        = map(any)
 }
 
 variable "default_sg" {
