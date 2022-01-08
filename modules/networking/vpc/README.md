@@ -45,7 +45,7 @@ output "igw_id" {
 
 output "vgw_id" {
   # enable_vgw = true 인 경우만 생성
-  value = module.vpc.vpn_gateway_id
+  value = module.vpc.vgw_id
 }
 ```
 
