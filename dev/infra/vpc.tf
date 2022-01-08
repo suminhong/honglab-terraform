@@ -6,6 +6,7 @@ locals {
   }
 }
 
+## Create VPC
 module "vpc" {
   source = "github.com/suminhong/honglab-terraform.git/modules/networking/vpc"
 
@@ -15,6 +16,7 @@ module "vpc" {
   tags       = local.env_tag
 }
 
+## Create Subnets
 module "subnet" {
   source   = "github.com/suminhong/honglab-terraform.git/modules/networking/subnet"
   for_each = local.sub_cidrs
@@ -25,4 +27,17 @@ module "subnet" {
   ip_address = each.value
   azs        = local.azs
   tags       = local.env_tag
+}
+
+## Create Public NAT in Public-A Subnet
+module "nat" {
+  source = "github.com/suminhong/honglab-terraform.git/modules/networking/nat"
+
+  prj       = local.prj
+  subnet_id = module.subnet["public"].subnet_ids.0
+  tags      = local.env_tag
+
+  depends_on = [
+    module.subnet
+  ]
 }
