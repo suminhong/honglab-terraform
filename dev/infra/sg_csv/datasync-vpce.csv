@@ -1,0 +1,2 @@
+key,rule_type,protocol,from_port,to_port,src_or_dst,desc
+1,ingress,tcp,443,443,10.0.0.0/16,HTTPS From VPC

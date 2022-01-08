@@ -1,0 +1,2 @@
+key,rule_type,protocol,from_port,to_port,src_or_dst,desc
+1,ingress,-1,0,0,self,RDS Self Reference
