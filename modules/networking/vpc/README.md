@@ -10,10 +10,9 @@ locals {
 }
 
 module "vpc" {
-  source   = "<path>/modules/networking/vpc"
+  source   = "github.com/suminhong/honglab-terraform.git/modules/networking/vpc"
   project  = "honglab"
   env      = "dev"
-  
 
   # (필수) VPC의 CIDR
   vpc_cidr = "10.0.0.0/16"
@@ -33,6 +32,7 @@ module "vpc" {
     {
       Tag = "example",
     },
+  )
 }
 
 output "vpc_id" {
@@ -49,18 +49,6 @@ output "vpn_gateway_id" {
   value = module.vpc.vpn_gateway_id
 }
 ```
-## Requirements
-
-| Name | Version | File |
-|------|---------|------|
-| terraform | >= 1.1.2 | `version.tf` |
-| aws | >= 3.45.0 | `version.tf` |
-
-## Providers
-
-| Name | Version | File |
-|------|---------|------|
-| aws | >= 3.45.0 | `version.tf` |
 
 ## Resources
 
