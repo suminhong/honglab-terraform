@@ -3,8 +3,10 @@ locals {
 }
 
 module "vpc" {
-  source   = "../../modules/networking/vpc"
-  prj      = local.prj
-  vpc_cidr = local.vpc_cidr
-  tags     = local.env_tag
+  source = "github.com/suminhong/honglab-terraform.git/modules/networking/vpc"
+  prj    = local.prj
+
+  vpc_cidr   = var.vpc_cidr
+  enable_vgw = true
+  tags       = local.env_tag
 }
