@@ -8,7 +8,7 @@ locals {
 
 ## Create VPC
 module "vpc" {
-  source = "github.com/suminhong/honglab-terraform.git/modules/networking/vpc"
+  source = "../../modules/networking/vpc"
 
   prj        = local.prj
   vpc_cidr   = var.vpc_cidr
@@ -18,7 +18,7 @@ module "vpc" {
 
 ## Create Subnets
 module "subnet" {
-  source   = "github.com/suminhong/honglab-terraform.git/modules/networking/subnet"
+  source   = "../../modules/networking/subnet"
   for_each = local.sub_cidrs
 
   prj        = local.prj
@@ -31,7 +31,7 @@ module "subnet" {
 
 ## Create Public NAT in Public-A Subnet
 module "nat" {
-  source = "github.com/suminhong/honglab-terraform.git/modules/networking/nat"
+  source = "../../modules/networking/nat"
 
   prj       = local.prj
   subnet_id = module.subnet["public"].subnet_ids.0
