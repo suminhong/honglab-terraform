@@ -52,7 +52,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | rt_id | Routing Table ID | `string` | n/a | yes |
-| routings | Routing set | `map(any)` | `{}` | no |
+| routings | Routing set | `map(any)` | n/a | yes |
 
 ## Outputs
 

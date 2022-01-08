@@ -6,5 +6,4 @@ variable "rt_id" {
 variable "routings" {
   description = "Routing set"
   type        = map(any)
-  default     = {}
 }
