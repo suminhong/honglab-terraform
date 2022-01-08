@@ -7,11 +7,11 @@ module "route" {
   source = "github.com/suminhong/honglab-terraform.git/modules/networking/route"
 
   # (필수) Routing Table ID
-  # dst_cidr : CIDR Block or Prefix List ID
-  # dst_id : IGW / VGW / NAT / TGW / Instance / Peering / VPCE
   rt_id = "rtb-1234"
 
   # Routing Rule Set. default = {}
+  # dst_cidr : CIDR Block or Prefix List ID
+  # dst_id : IGW / VGW / NAT / TGW / Instance / Peering / VPCE
   routings = {
     igw = {
       dst_cidr = "0.0.0.0/0",
