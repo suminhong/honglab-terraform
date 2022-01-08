@@ -38,12 +38,12 @@ output "vpc_id" {
   value = module.vpc.vpc_id
 }
 
-output "enable_igw" {
+output "igw_id" {
   # internet_gateway_enabled = true 인 경우만 생성
   value = module.vpc.igw_id
 }
 
-output "vpn_gateway_id" {
+output "vgw_id" {
   # enable_vgw = true 인 경우만 생성
   value = module.vpc.vpn_gateway_id
 }
@@ -81,4 +81,4 @@ No modules.
 |------|-------------|
 | vpc_id | The ID of the VPC |
 | igw_id | The ID of the Internet Gateway |
-| vpn_gateway_id | The ID of the Virtual Private Gateway |
+| vgw_id | The ID of the Virtual Private Gateway |

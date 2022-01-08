@@ -8,7 +8,7 @@ output "igw_id" {
   value       = try(aws_internet_gateway.igw.*.id[0], null)
 }
 
-output "vpn_gateway_id" {
+output "vgw_id" {
   description = "The ID of the Virtual Private Gateway"
   value       = try(aws_vpn_gateway.vgw.*.id[0], null)
 }
