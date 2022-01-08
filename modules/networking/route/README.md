@@ -45,8 +45,8 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| routings | Routing set | n/a | n/a | yes |
 | rt_id | Routing Table ID | `string` | n/a | yes |
+| routings | Routing set | `map(any)` | `{}` | no |
 
 ## Outputs
 
