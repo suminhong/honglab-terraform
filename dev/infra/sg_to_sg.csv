@@ -1,0 +1,4 @@
+key,protocol,from_port,to_port,from_sg,to_sg,desc
+2,tcp,1024,1064,datasync-agent,datasync-vpce,DataSync Agent
+3,tcp,443,443,datasync-agent,datasync-vpce,DataSync Agent
+4,tcp,5432,5432,alb,rds,ALB
