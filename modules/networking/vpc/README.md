@@ -24,7 +24,7 @@ module "vpc" {
   enable_vgw = true
   
   # VGW ASN 설정 필요 시 입력. default = 64512
-  vpn_gateway_asn = 64512
+  vgw_asn = 64512
   
   # module 내 공통 태그 추가. default = {}
   tags = merge(
