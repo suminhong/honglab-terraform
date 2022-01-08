@@ -1,10 +1,5 @@
-variable "project" {
+variable "prj" {
   description = "Project Name"
-  type        = string
-}
-
-variable "env" {
-  description = "Project Environment"
   type        = string
 }
 

@@ -1,7 +1,10 @@
 locals {
   env_tag = {
-    tf_env = "infra"
+    Env    = var.env,
+    tf_env = "infra",
   }
+
+  prj = "${var.project}-${var.env}"
 }
 
 variable "project" {

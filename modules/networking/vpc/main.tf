@@ -16,7 +16,7 @@ resource "aws_vpc" "vpc" {
     var.tags,
     local.module_tag,
     {
-      Name = "${var.project}-${var.env}-vpc",
+      Name = "${var.prj}-vpc",
     }
   )
 }
@@ -34,7 +34,7 @@ resource "aws_internet_gateway" "igw" {
     var.tags,
     local.module_tag,
     {
-      Name = "${var.project}-${var.env}-igw",
+      Name = "${var.prj}-igw",
     }
   )
 }
@@ -54,7 +54,7 @@ resource "aws_vpn_gateway" "vgw" {
     var.tags,
     local.module_tag,
     {
-      Name = "${var.project}-${var.env}-vgw",
+      Name = "${var.prj}-vgw",
     },
   )
 }

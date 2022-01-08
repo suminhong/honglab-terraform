@@ -11,8 +11,7 @@ locals {
 
 module "vpc" {
   source   = "github.com/suminhong/honglab-terraform.git/modules/networking/vpc"
-  project  = "honglab"
-  env      = "dev"
+  project  = "honglab-dev"
 
   # (필수) VPC의 CIDR
   vpc_cidr = "10.0.0.0/16"
@@ -68,8 +67,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| project | Project Name | `string` | n/a | yes |
-| env | Project Environment | `string` | n/a | yes |
+| prj | Project Name | `string` | n/a | yes |
 | vpc_cidr | The CIDR block of the VPC | `string` | n/a | yes |
 | enable_igw | Whether to enable Internet Gateway | `bool` | `true` | no |
 | enable_vgw | Whether to enable VPN Gateway | `bool` | `false` | no |
