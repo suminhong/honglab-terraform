@@ -3,6 +3,12 @@
 ## Usage
 
 ```tf
+locals {
+  env_tag = {
+    tf_env = "infra"
+  }
+}
+
 module "nat" {
   source = "github.com/suminhong/honglab-terraform.git/modules/networking/nat"
   prj    = "honglab-dev"
