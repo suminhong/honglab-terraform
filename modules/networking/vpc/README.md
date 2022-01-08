@@ -19,10 +19,7 @@ module "vpc" {
   vpc_cidr = "10.0.0.0/16"
   
   # Internet Gateway 활성화 여부. default = true
-  enable_igw = false
-  
-  # VPC에 연결할 Route 53 Private Host Zone이 있는 경우 [List]. default = []
-  private_hosted_zones = ["honglab.com",]
+  enable_igw = true
   
   # VGW 활성화 여부. default = false
   enable_vgw = true
